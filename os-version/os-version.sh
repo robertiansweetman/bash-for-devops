@@ -1,10 +1,15 @@
 #! /bin/bash
 
-mactest=$(sw_vers -productVersion)
+commands=$(sw_vers -productVersion)
 
-if [[ $mactest ]]; then 
-    echo "OS X Version: $(sw_vers -productVersion)"
+os_file_paths=("/etc/os-version" "/etc/releases")
+
+if [[ "$commands" ]]; then 
+    echo "Mac OS Version: $commands"
 else
-    echo "Not a mac"
+    for os_info in "${os_file_paths[@]}"; do
+        result=$(cat "$os_info")
+        echo "$result"
+        breaks # is it a good idea to put a break here?
+    done
 fi
-
