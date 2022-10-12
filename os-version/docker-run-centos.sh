@@ -1,5 +1,3 @@
 #! /bin/bash
 
-
-
-docker run -d --name os-version-centos -v /Users/andrew/Projects/andrewmacheret/os-version:/os-version centos:latest
+docker run -it --name os-version-centos -v "${PWD}"/os-version.sh:/tmp/os-version.sh --entrypoint "/bin/bash" centos:latest ./tmp/os-version.sh
