@@ -7,7 +7,7 @@ starting with a folder per scenario and going from there
 get the OS version of a linux machine
 
 0. getting the os version from things
-1. getting values in and out of things
+1. getting values in and out of scripts to use elsewhere
 2. passing values to terraform or other things
 3. passing environment variables to terraform
 4. something with ansible
